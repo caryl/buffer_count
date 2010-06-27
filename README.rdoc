@@ -1,0 +1,23 @@
+=BufferCount
+
+== Description
+buffer count 用于缓存点击count字段，减少update count的操作，典型应用于点击次数等
+
+* version 0.12
+* by Caryl
+
+== Requirements
+
+* Rails 2.2 or greater
+
+==Installation
+
+  ./script/plugin install git://github.com/caryl/buffer_count.git
+
+==Getting Started
+
+Example:
+  class Article
+      include BufferCount
+      has_buffer_count :column =>:views_count, :delay => 20
+  end
